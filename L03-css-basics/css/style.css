@@ -1,0 +1,92 @@
+/* Step 3 — Typography */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Different sizes for headings */
+h1 {
+  font-size: 2rem;
+  margin: 0;
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin-top: 0;
+}
+
+/* Step 5 — Header & Footer styling (group selector) */
+header,
+footer {
+  background: #f2f2f2;
+  padding: 1rem 1.25rem;
+}
+
+/* Step 8 — Basic layout constraint */
+main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 1.25rem; /* Step 4 — padding */
+}
+
+/* Step 4 — Vertical spacing between blocks */
+section {
+  margin-bottom: 2rem; /* Step 4 — margin */
+}
+
+/* Step 6 — Navigation styling */
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav li {
+  display: inline-block;
+  margin-right: 1rem;
+}
+
+/* Descendant selector */
+nav a {
+  text-decoration: none;
+  color: black;
+}
+
+/* Pseudo-class */
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* Step 7 — Responsive images */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Class selector example */
+.card {
+  padding: 1rem;
+  background: #fafafa;
+  margin-bottom: 1rem;
+}
+
+/* ID selector example */
+#portfolio ul,
+#contact ul {
+  padding-left: 1.25rem;
+}
+
+/* Accessibility — Skip link */
+a[href="#main"] {
+  position: absolute;
+  left: -999px;
+  top: 0;
+}
+
+a[href="#main"]:focus {
+  left: 1rem;
+  top: 1rem;
+  background: #fff;
+  padding: 0.5rem 0.75rem;
+}
