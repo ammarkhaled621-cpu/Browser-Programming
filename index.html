@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Ammar Khalil | Portfolio</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      transition: 0.3s;
+    }
+
+    /* HERO SECTION */
+    .hero {
+      text-align: center;
+      padding: 60px 20px;
+      background: linear-gradient(135deg, #4facfe, #00f2fe);
+      color: white;
+    }
+
+    .name {
+      font-size: 3rem;
+      margin: 0;
+      letter-spacing: 1px;
+    }
+
+    .tagline {
+      margin-top: 10px;
+      font-size: 1.2rem;
+      opacity: 0.9;
+    }
+
+    .hero button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 25px;
+      background: white;
+      color: #333;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .hero button:hover {
+      transform: translateY(-2px);
+    }
+
+    section {
+      padding: 40px;
+      text-align: center;
+    }
+
+    /* SKILLS */
+    .skills-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+    }
+
+    .skill-card {
+      background: #f0f0f0;
+      padding: 15px 25px;
+      border-radius: 10px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .skill-card:hover {
+      transform: scale(1.05);
+    }
+
+    /* PROJECTS */
+    .project {
+      margin-bottom: 25px;
+    }
+
+    .project a {
+      text-decoration: none;
+      color: #4facfe;
+      font-weight: bold;
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+      opacity: 0.7;
+    }
+
+    /* DARK MODE */
+    .dark {
+      background-color: #121212;
+      color: white;
+    }
+
+    .dark .hero {
+      background: linear-gradient(135deg, #232526, #414345);
+    }
+
+    .dark .skill-card {
+      background: #333;
+    }
+
+    .dark .hero button {
+      background: #222;
+      color: white;
+    }
+
+    .dark a {
+      color: #00f2fe;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- HERO -->
+  <header class="hero">
+    <h1 class="name">Ammar Khalil</h1>
+    <p class="tagline">Web Developer • IoT Enthusiast • Problem Solver</p>
+    <button id="themeToggle">Toggle Theme</button>
+  </header>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skills-container">
+      <div class="skill-card">HTML</div>
+      <div class="skill-card">CSS</div>
+      <div class="skill-card">JavaScript</div>
+      <div class="skill-card">Python</div>
+      <div class="skill-card">IoT</div>
+      <div class="skill-card">LTspice</div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <h2>Projects</h2>
+
+    <div class="project">
+      <h3>Portfolio Website</h3>
+      <p>A personal website to showcase my skills and projects.</p>
+      <a href="#" target="_blank">View Project</a>
+    </div>
+
+    <div class="project">
+      <h3>IoT Smart Home</h3>
+      <p>A system that controls home devices remotely using sensors.</p>
+      <a href="#" target="_blank">View Project</a>
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p id="lastUpdated"></p>
+  </footer>
+
+  <!-- SCRIPT -->
+  <script>
+    let isDark = false;
+    const button = document.getElementById("themeToggle");
+
+    // Load saved theme
+    const savedTheme = localStorage.getItem("portfolio_theme");
+    if (savedTheme === "dark") {
+      document.body.classList.add("dark");
+      isDark = true;
+    }
+
+    // Toggle theme
+    button.addEventListener("click", () => {
+      isDark = !isDark;
+      document.body.classList.toggle("dark");
+
+      localStorage.setItem("portfolio_theme", isDark ? "dark" : "light");
+    });
+
+    // Last updated
+    const lastUpdated = document.getElementById("lastUpdated");
+    const today = new Date().toISOString().split("T")[0];
+    lastUpdated.textContent = "Last updated: " + today;
+  </script>
+
+</body>
+</html>
